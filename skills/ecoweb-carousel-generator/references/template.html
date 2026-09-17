@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+  PLANTILLA BASE — EcoWeb Carousel Generator
+  1080 x 1350 px (formato 4:5, feed de Instagram)
+
+  Cómo usarla:
+  1. Copia este archivo por cada slide del carrusel
+  2. Cambia la clase del <body> según el tipo de slide:
+     slide--portada | slide--dato | slide--narrativa | slide--comparacion
+     | slide--checklist | slide--cta
+  3. Sustituye el contenido dentro de <main> según la plantilla elegida
+     (ver los bloques de ejemplo comentados abajo, deja solo el que uses)
+  4. Sustituye las rutas de ilustración por la ilustración real de
+     assets/illustrations/
+  5. Renderiza a PNG exacto 1080x1350px
+-->
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --eco-green:   #1DB86B;
+    --forest-deep: #0F6E56;
+    --deep-violet: #262033;
+    --mist-white:  #F5F7F5;
+    --red-alert:   #E53E3E;
+    --gray-text:   #666666;
+    --safe-margin: 80px;
+  }
+
+  @font-face{
+    font-family:'Syne';
+    font-weight:700 800;
+    src:local('Syne');
+  }
+  @font-face{
+    font-family:'DM Sans';
+    font-weight:400 500;
+    src:local('DM Sans');
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{
+    width:1080px;
+    height:1350px;
+    overflow:hidden;
+    font-family:'DM Sans',sans-serif;
+  }
+
+  main{
+    width:100%;
+    height:100%;
+    padding:var(--safe-margin);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .logo-mark{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    height:36px;
+    opacity:.9;
+  }
+
+  /* ============ SLIDE: PORTADA ============ */
+  .slide--portada{background:var(--deep-violet)}
+  .slide--portada .ilustracion{
+    width:220px;
+    margin:0 auto 48px;
+    display:block;
+  }
+  .slide--portada h1{
+    font-family:'Syne',sans-serif;
+    font-weight:800;
+    font-size:72px;
+    line-height:1.15;
+    color:#fff;
+    text-align:center;
+  }
+
+  /* ============ SLIDE: DATO / CIFRA ============ */
+  .slide--dato{background:var(--mist-white)}
+  .slide--dato .cifra{
+    font-family:'Syne',sans-serif;
+    font-weight:800;
+    font-size:150px;
+    line-height:1;
+    color:var(--eco-green);
+    text-align:center;
+  }
+  .slide--dato .cifra--dolor{color:var(--red-alert)}
+  .slide--dato .contexto{
+    font-size:32px;
+    color:var(--gray-text);
+    text-align:center;
+    margin-top:32px;
+    line-height:1.5;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ============ SLIDE: NARRATIVA ============ */
+  .slide--narrativa{background:var(--mist-white)}
+  .slide--narrativa.dark{background:var(--deep-violet)}
+  .slide--narrativa p{
+    font-size:40px;
+    line-height:1.5;
+    color:var(--deep-violet);
+    max-width:880px;
+  }
+  .slide--narrativa.dark p{color:#fff}
+
+  /* ============ SLIDE: COMPARACION ============ */
+  .slide--comparacion{background:var(--mist-white)}
+  .slide--comparacion table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:30px;
+  }
+  .slide--comparacion th{
+    font-family:'Syne',sans-serif;
+    font-weight:700;
+    text-align:left;
+    padding:24px 16px;
+    background:var(--deep-violet);
+    color:#fff;
+  }
+  .slide--comparacion td{
+    padding:24px 16px;
+    border-bottom:1px solid #ddd;
+    color:var(--deep-violet);
+  }
+  .slide--comparacion tr.highlight td{
+    border-left:6px solid var(--eco-green);
+    background:#E8F7EF;
+  }
+
+  /* ============ SLIDE: CHECKLIST ============ */
+  .slide--checklist{background:var(--mist-white)}
+  .slide--checklist ul{list-style:none}
+  .slide--checklist li{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    font-size:34px;
+    color:var(--deep-violet);
+    margin-bottom:36px;
+  }
+  .slide--checklist .check{
+    flex:none;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--eco-green);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    font-weight:700;
+  }
+
+  /* ============ SLIDE: CTA ============ */
+  .slide--cta{
+    background:var(--deep-violet);
+    text-align:center;
+  }
+  .slide--cta h2{
+    font-family:'Syne',sans-serif;
+    font-weight:800;
+    font-size:60px;
+    color:#fff;
+    line-height:1.25;
+  }
+</style>
+</head>
+
+<!-- Cambia esta clase segun el tipo de slide -->
+<body class="slide--portada">
+<main>
+
+  <!-- ====== EJEMPLO: PORTADA (deja solo este bloque si es slide 1) ====== -->
+  <img class="ilustracion" src="../assets/illustrations/silla-dental.png" alt="">
+  <h1>¿Cuántos pacientes te escribieron anoche<br>y se fueron con tu competencia?</h1>
+
+  <!--
+  ====== EJEMPLO: DATO / CIFRA (borra el bloque de portada y usa este) ======
+  <div class="cifra cifra--dolor">$864,000</div>
+  <p class="contexto">MXN al año en pacientes que se pierden por no responder fuera de horario</p>
+  -->
+
+  <!--
+  ====== EJEMPLO: NARRATIVA ======
+  <p>Tu recepcionista llegó el lunes y tiene 30 mensajes sin responder del fin de semana.</p>
+  -->
+
+  <!--
+  ====== EJEMPLO: COMPARACION ======
+  <table>
+    <tr><th>Concepto</th><th>Costo</th><th>Cobertura</th></tr>
+    <tr><td>Recepcionista</td><td>$185K-$200K/año</td><td>8 hrs, L-V</td></tr>
+    <tr class="highlight"><td>EcoWeb</td><td>$24K + $8K-$13.5K/mes</td><td>24/7, 365 días</td></tr>
+  </table>
+  -->
+
+  <!--
+  ====== EJEMPLO: CHECKLIST ======
+  <ul>
+    <li><span class="check">✓</span>Respuesta automática 24/7</li>
+    <li><span class="check">✓</span>Agendamiento en tiempo real</li>
+  </ul>
+  -->
+
+  <!--
+  ====== EJEMPLO: CTA ======
+  <h2>Comenta DIAGNOSTICO<br>y te mando el análisis de tu clínica</h2>
+  -->
+
+  <img class="logo-mark" src="../assets/ecoweb-logo.webp" alt="ecoweb">
+</main>
+</body>
+</html>
