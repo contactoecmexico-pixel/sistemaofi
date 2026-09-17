@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Dancing+Script:wght@700&display=swap">
+<style>
+  :root{
+    --eco-green:#1DB86B;
+    --forest-deep:#0F6E56;
+    --teal-deep:#0A4E3D;
+    --deep-violet:#262033;
+    --mist-white:#F5F7F5;
+    --safe:80px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{
+    background:linear-gradient(160deg,#0F6E56,#0A4E3D);
+    font-family:'DM Sans',sans-serif;
+    position:relative;
+  }
+
+  .grain{
+    position:absolute; inset:0; pointer-events:none; z-index:9;
+    opacity:.07; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  main{
+    position:relative; z-index:2;
+    width:100%; height:100%;
+    padding:var(--safe);
+    display:flex; flex-direction:column;
+  }
+
+  /* ---- fila de crédito ---- */
+  .credits{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:19px; letter-spacing:.14em; text-transform:uppercase;
+  }
+  .credits .brand{color:var(--eco-green)}
+  .credits .topic{color:rgba(245,247,245,.55)}
+
+  /* ---- bloque hero ---- */
+  .hero{margin-top:64px; position:relative}
+
+  .kicker{
+    font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:30px; letter-spacing:.11em; text-transform:uppercase;
+    color:rgba(245,247,245,.82);
+    margin-bottom:6px;
+  }
+
+  .display{
+    font-family:'Syne',sans-serif; font-weight:800;
+    font-size:196px; line-height:.86; letter-spacing:-.035em;
+    color:var(--mist-white); text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .script{
+    position:absolute;
+    right:18px; top:22px;
+    font-family:'Dancing Script',cursive; font-weight:700;
+    font-size:132px; line-height:1;
+    color:var(--eco-green);
+    transform:rotate(-4deg);
+    z-index:4;
+  }
+
+  /* ---- metadatos + chip ---- */
+  .metarow{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    margin-top:26px;
+  }
+  .meta{
+    display:flex; gap:52px;
+    font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:19px; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(245,247,245,.72);
+  }
+  .chip{text-align:right}
+  .chip .lbl{
+    font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:17px; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(245,247,245,.72); line-height:1.35;
+  }
+  .chip .swatch{
+    width:104px; height:78px; margin-top:9px; margin-left:auto;
+    background:var(--eco-green);
+    border:2px solid rgba(245,247,245,.25);
+  }
+
+  /* ---- objeto ---- */
+  .object{
+    flex:1;
+    position:relative;
+    margin:0 -46px;
+  }
+  .object img{
+    position:absolute;
+    left:50%; top:44%;
+    transform:translate(-50%,-50%);
+    width:1010px;
+    filter:drop-shadow(0 46px 60px rgba(6,38,30,.55));
+  }
+
+  /* ---- pie ---- */
+  .foot{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    position:relative; z-index:5;
+  }
+  .foot .mark{
+    font-family:'Syne',sans-serif; font-weight:800;
+    font-size:26px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--mist-white);
+  }
+  .foot .folio{
+    font-family:'Syne',sans-serif; font-weight:800;
+    font-size:82px; line-height:.8; color:rgba(245,247,245,.30);
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="credits">
+    <span class="brand">EcoWeb</span>
+    <span class="topic">El dentista como dueño</span>
+  </div>
+
+  <div class="hero">
+    <div class="kicker">Seis años de carrera para este</div>
+    <div class="display">Sillón</div>
+    <div class="script">vacío</div>
+  </div>
+
+  <div class="metarow">
+    <div class="meta">
+      <span>Pilar 03</span>
+      <span>Carrusel 04</span>
+    </div>
+    <div class="chip">
+      <div class="lbl">ECO<br>1DB86B</div>
+      <div class="swatch"></div>
+    </div>
+  </div>
+
+  <div class="object">
+    <img src="silla-dental.png" alt="">
+  </div>
+
+  <div class="foot">
+    <span class="mark">ecowebmx.com</span>
+    <span class="folio">01</span>
+  </div>
+
+</main>
+<div class="grain"></div>
+</body>
+</html>
